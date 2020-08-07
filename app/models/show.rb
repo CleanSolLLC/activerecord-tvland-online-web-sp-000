@@ -4,7 +4,6 @@ class Show < ActiveRecord::Base
   belongs_to :network
 
   def actors_list
-    binding.pry
-    self.actors.full_name
+    self.actors.collect{|n| n.first_name n.last_name}
   end
 end
