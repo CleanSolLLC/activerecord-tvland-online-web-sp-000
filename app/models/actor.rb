@@ -7,8 +7,8 @@ class Actor < ActiveRecord::Base
   end
 
   def list_roles
-    character = self.characters.collect{|n| n.name}
-    shows = self.shows.collect{|n| n.name}
+    character = self.characters.collect{|n| n.name}.join
+    shows = self.shows.collect{|n| n.name}.join
     "#{character} - #{shows}"
   end
 
